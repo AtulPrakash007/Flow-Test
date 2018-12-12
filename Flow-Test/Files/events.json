@@ -1,4 +1,9 @@
 [{
+        "type": "HOLIDAY",
+        "title": "Summer Bank Holiday",
+        "datetime": 1541084400000
+      },
+      {
 		"type": "SCHEDULED",
 		"title": "Meeting A",
 		"datetime": 1541059200000,
@@ -53,6 +58,16 @@
 		"title": "Google Cal F",
 		"datetime": 1541266200000
 	},
+    {
+        "type": "HOLIDAY",
+        "title": "Summer Bank Holiday 3",
+        "datetime": 1541340000000
+    },
+    {
+        "type": "HOLIDAY",
+        "title": "Summer Bank Holiday 4",
+        "datetime": 1541340000000
+    },
 	{
 		"type": "SCHEDULED",
 		"title": "Meeting A",

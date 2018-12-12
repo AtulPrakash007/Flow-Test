@@ -72,8 +72,12 @@ class ViewController: UIViewController {
     **/
     
     func callJson(with fileName: String, and type: String) {
+        ActivityIndicator.shared.showProgressView(self.view)
+        
         Request.sharedInstance.readJson(file: kFileName, of: kFileType) { (dict, array, error) in
             DispatchQueue.main.async {
+                defer{ActivityIndicator.shared.hideProgressView()}
+                
                 guard error == nil else {
                     print("error is not nil")
                     return
@@ -105,6 +109,7 @@ class ViewController: UIViewController {
     func parseJsonData(from isArray:Bool, then array: Array<Any>, else dict: Dictionary<String, Any>){
         
         if array.count > 0 {
+          
             for index in 0...array.count-1 {
                 let dict = array[index] as! [String: AnyObject]
 //                let result: String = dict[kClientName] as? String ?? ""
@@ -223,6 +228,7 @@ extension ViewController: UITableViewDataSource {
             cell = importedCell
             
         case "HOLIDAY":
+            holidayCell.holidayLabel.text = cellData.title
             cell = holidayCell
             
         default:
@@ -252,7 +258,7 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 45
     }
 }
 
